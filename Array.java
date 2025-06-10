@@ -7,7 +7,6 @@ public class Array {
         }
         return sum;
     }
-
     public static double average(int[] arr) {
         if (arr.length == 0) {
             return 0;
@@ -15,7 +14,7 @@ public class Array {
         return (double) sum(arr) / arr.length;
     }
 
-    public static int min(int[] arr) {
+public static int min(int[] arr) {
         if (arr.length == 0) {
             
         int min = arr[0];
@@ -26,8 +25,7 @@ public class Array {
         }
         return min;
     }
-
-    public static int max(int[] arr) {
+public static int max(int[] arr) {
         if (arr.length == 0) {
             
         int max = arr[0];
@@ -38,8 +36,7 @@ public class Array {
         }
         return max;
     }
-
-    public static void main(String[] args) {
+ public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println("Sum: " + sum(numbers));
         System.out.println("Average: " + average(numbers));

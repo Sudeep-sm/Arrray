@@ -1,24 +1,51 @@
+
 public class Array {
-   public Array() {
-   }
+    public static int sum(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
 
-   public static int sum(int[] var0) {
-      int var1 = 0;
+    public static double average(int[] arr) {
+        if (arr.length == 0) {
+            return 0;
+        }
+        return (double) sum(arr) / arr.length;
+    }
 
-      for(int var2 = 0; var2 < var0.length; ++var2) {
-         var1 += var0[var2];
-      }
+    public static int min(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
 
-      return var1;
-   }
+    public static int max(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
 
-   public static double average(int[] var0) {
-      return var0.length == 0 ? 0.0 : (double)sum(var0) / (double)var0.length;
-   }
-
-   public static void main(String[] var0) {
-      int[] var1 = new int[]{1, 2, 3, 4, 5};
-      System.out.println("Sum: " + sum(var1));
-      System.out.println("Average: " + average(var1));
-   }
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        System.out.println("Sum: " + sum(numbers));
+        System.out.println("Average: " + average(numbers));
+        System.out.println("Min: " + min(numbers));
+        System.out.println("Max: " + max(numbers));
+    }
 }
